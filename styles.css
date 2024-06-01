@@ -225,20 +225,22 @@ footer p {
 }
 
 /* image slider styles */
-li img {
+/* li img {
     display: block;
     width: 100%;
     max-width: 100%;
     margin-bottom: 1.5rem;
-}
+} */
 
 .scroll-container {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
+    /* Hide scrollbar */
     white-space: nowrap;
     text-align: center;
-    scroll-behavior: smooth;
     padding-bottom: 20px;
+    transition: transform 0.5s ease;
+    /* Smooth transitioning */
 }
 
 .slider ul {
@@ -248,9 +250,12 @@ li img {
     text-align: center;
 }
 
+
 .slider li {
     display: inline-block;
     width: min(50vw, 350px);
+    height: min(50vw, 350px);
+    /* Set fixed dimensions */
     background-color: #16171f;
     color: #9b9dad;
     padding: 1rem;
@@ -258,4 +263,41 @@ li img {
     font-size: clamp(18px, 2.5vw, 22px);
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
     vertical-align: top;
+    overflow: hidden;
+    /* Hide overflowing content */
+}
+
+.slider li img {
+    width: 100%;
+    /* Make image fill its container */
+    height: 100%;
+    /* Make image fill its container */
+    object-fit: cover;
+    /* Maintain aspect ratio and cover container */
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 20px;
+}
+
+.slider {
+    display: inline-block;
+    animation: scrollAnimation 20s linear infinite;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-70%);
+    }
+}
+
+.slider li {
+    display: inline-block;
 }
