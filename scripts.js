@@ -21,3 +21,24 @@ setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
 }, 3000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollContainer = document.querySelector(".scroll-container");
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount += 2; // Adjust this value for scroll speed
+    if (
+      scrollAmount >=
+      scrollContainer.scrollWidth - scrollContainer.clientWidth
+    ) {
+      scrollAmount = 0;
+    }
+    scrollContainer.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }
+
+  setInterval(autoScroll, 50); // Adjust this value for smoother scrolling
+});

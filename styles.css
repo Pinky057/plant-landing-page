@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* *::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    background-color: #1e1f26;
+    height: 20px;
+    width: 20px;
+}
+
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+    background: #383d4d;
+    border-radius: 99em;
+    border: 6px solid #1e1f26;
+} */
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -164,42 +188,6 @@ body {
     cursor: pointer;
 }
 
-/* Image Slider Styles */
-.slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin: 20px 0;
-}
-
-.slide {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-}
-
-.slider-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.slider-nav button {
-    background-color: #d9337c;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.slider-nav button.active {
-    background-color: #000;
-}
 
 /* Footer Styles */
 .footer-content {
@@ -234,4 +222,40 @@ footer p {
     background-color: #d9337c;
     color: #fff;
     margin: 0;
+}
+
+/* image slider styles */
+li img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+}
+
+.slider ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.slider li {
+    display: inline-block;
+    width: min(50vw, 350px);
+    background-color: #16171f;
+    color: #9b9dad;
+    padding: 1rem;
+    margin: 0 5px;
+    font-size: clamp(18px, 2.5vw, 22px);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: top;
 }
